@@ -10,7 +10,6 @@ import (
 	"github.com/spf13/viper"
 	"os"
 	"path/filepath"
-	"time"
 )
 
 func Viper(path ...string) *viper.Viper {
@@ -55,7 +54,7 @@ func Viper(path ...string) *viper.Viper {
 
 	global.GVA_CONFIG.AutoCode.Root, _ = filepath.Abs("..")
 	global.BlackCache = local_cache.NewCache(
-		local_cache.SetDefaultExpire(time.Second * time.Duration(global.GVA_CONFIG.JWT.ExpiresTime)),
+		//local_cache.SetDefaultExpire(time.Second * time.Duration(global.GVA_CONFIG.JWT.ExpiresTime)),
 	)
 	return v
 
